@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIMMA - Toboganes de Emergencia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="imagenes/fimma.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- 1. Añadir CSS de Swiper.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Iconos (Feather Icons) -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <main>
+        <!-- ================== Hero Section ================== -->
+        <section id="hero" class="hero">
+            <div class="hero-content-overlay">
+                <h1>Protegiendo a los niños de Chile</h1>
+                <p>Desde 2010, FIMMA instala toboganes de emergencia en jardines infantiles y escuelas a lo largo de casi todas las regiones del país, priorizando la seguridad, rapidez y eficacia en cada proyecto.</p>
+
+                <!-- Floating Navigation Bar -->
+                <nav class="floating-nav">
+                    <div class="nav-left">
+                        <span class="nav-pill"><img src="imagenes/fimma.png" alt="Logo Fimma" class="nav-logo"> Fimma</span>
+                    </div>
+                    <div class="nav-center">
+                        <a href="#hero" class="nav-link-primary">Inicio</a>
+                        <a href="#productos" class="nav-link-secondary">Productos</a>
+                        <a href="#nosotros" class="nav-link-secondary">Nosotros</a>
+                        <a href="#galeria" class="nav-link-secondary">Galería</a>
+                        <div class="nav-dropdown">
+                            <a href="#" class="nav-more-button">Más <i data-feather="chevron-down" class="chevron-icon"></i></a>
+                            <div class="dropdown-menu">
+                                <a href="#productos">Productos</a>
+                                <a href="#nosotros">Nosotros</a>
+                                <a href="#galeria">Galería</a>
+                            </div>
+                        </div>
+                        <a href="#contacto" class="nav-link-primary">Contacto</a>
+                    </div>
+                    <div class="nav-right">
+                        <a href="#" class="buy-button">Solicitar Información</a>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Animated Waves -->
+            <div class="waves-container">
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(45,55,72,0.7)" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(45,55,72,0.5)" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(45,55,72,0.3)" />
+                        <use xlink:href="#gentle-wave" x="48" y="7" fill="#f8f9fa" />
+                    </g>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ================== Lower Content Section ================== -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i data-feather="shield" class="stat-icon"></i>
+                    <h3 class="stat-title">Toboganes para Jardines Infantiles</h3>
+                    <p class="stat-description">Especialmente diseñados para la evacuación rápida y segura de niños pequeños. Instalados en jardines infantiles de todo Chile.</p>
+                </div>
+                <div class="stat-item">
+                    <i data-feather="home" class="stat-icon"></i>
+                    <h3 class="stat-title">Toboganes para Escuelas</h3>
+                    <p class="stat-description">Soluciones robustas y seguras para colegios y escuelas, adaptadas a cada espacio y necesidad.</p>
+                </div>
+                <div class="stat-item">
+                    <i data-feather="tool" class="stat-icon"></i>
+                    <h3 class="stat-title">Sistema de Canoas Intercambiables</h3>
+                    <p class="stat-description">Innovador sistema que permite el cambio y mantención de las canoas, extendiendo la vida útil del tobogán y garantizando máxima seguridad.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== Products Section ================== -->
+        <section id="productos" class="products-section">
+            <h2>Nuestros Productos</h2>
+            <div class="products-grid">
+                <!-- Producto 1: Kit de Autoinstalación -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="imagenes/tobogan2.png" alt="Kit de autoinstalación de tobogán de emergencia">
+                    </div>
+                    <div class="product-content">
+                        <h3>Kit de Autoinstalación</h3>
+                        <p>Todo lo que necesitas para una instalación segura y certificada, con instrucciones claras y soporte a distancia.</p>
+                        <a href="#contacto" class="product-button">Consultar</a>
+                    </div>
+                </div>
+                <!-- Producto 2: Repuestos y Piezas -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="imagenes/Captura de pantalla 2025-02-13 163839.png" alt="Repuestos y piezas para toboganes">
+                    </div>
+                    <div class="product-content">
+                        <h3>Repuestos y Piezas</h3>
+                        <p>Garantiza la vida útil de tu tobogán con nuestro stock completo de repuestos y sistema de canoas intercambiables.</p>
+                        <a href="#contacto" class="product-button">Ver Piezas</a>
+                    </div>
+                </div>
+                <!-- Producto 3: Set Completo -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="imagenes/Captura de pantalla 2025-02-13 164032.png" alt="Set completo de tobogán de emergencia instalado">
+                    </div>
+                    <div class="product-content">
+                        <h3>Set Completo (Instalado)</h3>
+                        <p>Nos encargamos de todo: visita técnica, fabricación a medida, instalación y certificación final del sistema.</p>
+                        <a href="#contacto" class="product-button">Solicitar Visita</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== Account Pages Section ================== -->
+        <section id="galeria" class="account-section">
+            <h2>Galería de Proyectos</h2>
+            <div class="account-grid">
+                <div class="account-text-content">
+                    <span class="pre-title">Nuestra Garantía</span>
+                    <h2>¿Por qué elegirnos?</h2>
+                    <p>Nuestros pilares son la experiencia, la rapidez y el soporte constante. Respondemos siempre a los llamados y contamos con un sistema que facilita el mantenimiento.</p>
+                    <div class="account-buttons">
+                        <a href="#contacto" class="cta-button orange">Contactar a Soporte</a>
+                        <a href="#" class="cta-button-ghost">Ver Proyectos</a>
+                    </div>
+                </div>
+                <div class="account-image-grid">
+                    <!-- Imágenes de características de Fimma -->
+                    <img src="imagenes/Captura de pantalla 2025-02-13 170025.png" alt="Instalación de tobogán Fimma 1" class="img-1">
+                    <img src="imagenes/Captura de pantalla 2025-02-13 164815.png" alt="Instalación de tobogán Fimma 2" class="img-2">
+                    <img src="imagenes/Captura de pantalla 2025-02-13 164708.png" alt="Instalación de tobogán Fimma 3" class="img-3">
+                    <img src="imagenes/Captura de pantalla 2025-02-13 164032.png" alt="Instalación de tobogán Fimma 4" class="img-4">
+                    <img src="imagenes/Captura de pantalla 2025-02-13 163839.png" alt="Instalación de tobogán Fimma 5" class="img-5">
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== Features Section ================== -->
+        <section id="nosotros" class="features-section">
+            <h2>Sobre Nosotros</h2>
+            <div class="features-grid">
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i data-feather="map"></i>
+                        <h3>Experiencia y Cobertura</h3>
+                        <p>Desde 2010, hemos instalado toboganes desde Arica a Punta Arenas, siempre mejorando y velando por la seguridad de los niños.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i data-feather="fast-forward"></i>
+                        <h3>Velocidad y Eficacia</h3>
+                        <p>Nuestra mayor virtud es la rapidez y eficacia en la instalación y puesta en marcha de cada tobogán.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i data-feather="tool"></i>
+                        <h3>Soporte y Mantención</h3>
+                        <p>Respondemos siempre a los llamados y contamos con un sistema que facilita el mantenimiento y reemplazo de piezas, asegurando una mayor vida útil.</p>
+                    </div>
+                    <div class="feature-item hidden"></div>
+                </div>
+                <div class="feel-card">
+                    <i data-feather="box" class="feel-icon"></i>
+                    <h2>Kit de Autoinstalación</h2>
+                    <p class="feel-card-description">¿Sabías que contamos con un kit de autoinstalación?</p>
+                    <a href="#" class="neumorphic-button">¡Coordina una visita y te ayudamos!</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== Documentation Section ================== -->
+        <section id="documentacion" class="documentation-section">
+            <div class="documentation-header-card">
+                <div class="doc-header-content">
+                    <span class="pre-title">Normativa y Seguridad</span>
+                    <h2>Documentación Técnica Completa</h2>
+                    <p>Ponemos a tu disposición todo el material de apoyo y la documentación necesaria para garantizar una correcta instalación y mantenimiento, cumpliendo siempre con las normativas de seguridad vigentes.</p>
+                    <a href="#" class="doc-link">Ver Documentos <i data-feather="arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Video Demostrativo -->
+            <div class="video-wrapper">
+                <h3>¿Cómo se usa el tobogán de emergencia?</h3>
+                <!-- Contenedor del video con previsualización -->
+                <div class="video-container" data-video-id="piFlfMbzj_0">
+                    <!-- La imagen de fondo se añadirá con CSS -->
+                    <button class="play-button" aria-label="Reproducir video"></button>
+                </div>
+            </div>
+
+            <div class="doc-features-grid">
+                <!-- Card 1 (Orange) -->
+                <div class="doc-feature-card orange-card">
+                    <div class="doc-card-icon">
+                        <i data-feather="shield"></i>
+                    </div>
+                    <h3>Certificaciones de Seguridad</h3>
+                    <p>Nuestros productos cumplen con las más altas normativas de seguridad para evacuación en recintos escolares.</p>
+                </div>
+
+                <!-- Card 2 (White) -->
+                <div class="doc-feature-card white-card">
+                    <div class="doc-card-icon orange-icon">
+                        <i data-feather="settings"></i>
+                    </div>
+                    <h3>Guías de Instalación</h3>
+                    <p>Manuales detallados paso a paso para la correcta instalación del kit de autoinstalación o para la supervisión de nuestros técnicos.</p>
+                </div>
+
+                <!-- Card 3 (White) -->
+                <div class="doc-feature-card white-card">
+                    <div class="doc-card-icon orange-icon">
+                        <i data-feather="tool"></i>
+                    </div>
+                    <h3>Manual de Mantenimiento</h3>
+                    <p>Aprende sobre las revisiones periódicas y el cuidado necesario para asegurar la máxima vida útil y operatividad de tu tobogán.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== Contact Section ================== -->
+        <section id="contacto" class="contact-section">
+            <h2>Contáctanos</h2>
+            <p class="contact-subtitle">Estamos listos para resolver tus dudas y ayudarte a implementar la mejor solución de seguridad para tu establecimiento.</p>
+            <div class="contact-buttons">
+                <a href="mailto:fima.retail@gmail.com" class="cta-button">
+                    <i data-feather="mail"></i> Enviar Correo
+                </a>
+                <a href="https://wa.me/56984081202" target="_blank" rel="noopener noreferrer" class="cta-button orange">
+                    <i data-feather="message-circle"></i> Hablar por WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <!-- ================== Social Media Section ================== -->
+        <section id="redes" class="social-section">
+            <h2>Síguenos en nuestras redes sociales</h2>
+            <p class="social-subtitle">Mantente al día con nuestros últimos proyectos, noticias y consejos de seguridad.</p>
+            <div class="social-buttons">
+                <a href="https://www.instagram.com/fimma.cl/#" target="_blank" rel="noopener noreferrer" class="cta-button social-insta-button">
+                    <i data-feather="instagram"></i> Instagram Fimma
+                </a>
+                <a href="https://www.instagram.com/nelson_vasquez_fima/#" target="_blank" rel="noopener noreferrer" class="cta-button social-insta-button">
+                    <i data-feather="instagram"></i> Instagram Nelson Vásquez
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================== Footer ================== -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <img src="imagenes/fimma.png" alt="Logo Fimma" class="footer-logo">
+                <span>FIMMA &copy; 2024. Todos los derechos reservados.</span>
+            </div>
+            <div class="footer-right">
+                <a href="#hero" class="back-to-top">Volver arriba <i data-feather="arrow-up"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 3. Añadir JS de Swiper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
