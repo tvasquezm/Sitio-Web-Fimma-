@@ -149,4 +149,26 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileNavOverlay.addEventListener('click', closeMobileMenu);
     // Cierra el menú al hacer clic en un enlace
     mobileNavLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+
+    // --- Lógica para pre-rellenar el formulario de contacto desde los productos ---
+    const productContactButtons = document.querySelectorAll('.product-card .cta-button');
+    const messageTextarea = document.getElementById('message');
+
+    const generateMessageTemplate = (product) => `Hola, quisiera cotizar lo siguiente:
+
+- Producto de interés: ${product}
+- Nombre del establecimiento: 
+- Ubicación (Comuna/Ciudad): 
+- Teléfono: 
+
+Gracias, quedo atento/a.`;
+
+    productContactButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const productName = e.currentTarget.dataset.product;
+            if (productName && messageTextarea) {
+                messageTextarea.value = generateMessageTemplate(productName);
+            }
+        });
+    });
 });

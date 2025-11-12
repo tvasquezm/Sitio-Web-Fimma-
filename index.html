@@ -3,7 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO y Metadatos -->
     <title>FIMMA - Toboganes de Emergencia</title>
+    <meta name="description" content="FIMMA, líder en Chile en la instalación de toboganes de emergencia para jardines infantiles y escuelas. Seguridad, rapidez y eficacia desde 2010.">
+    <meta name="keywords" content="toboganes de emergencia, evacuación infantil, seguridad escolar, FIMMA, Chile">
+    <link rel="canonical" href="https://www.fimma.cl"> <!-- Reemplazar con tu dominio final -->
+
+    <!-- Open Graph para Redes Sociales -->
+    <meta property="og:title" content="FIMMA - Toboganes de Emergencia para Jardines y Escuelas">
+    <meta property="og:description" content="Soluciones seguras y eficaces para la evacuación de niños. Cobertura en todo Chile.">
+    <meta property="og:image" content="https://www.fimma.cl/imagenes/hero.png"> <!-- URL absoluta de una imagen representativa -->
+    <meta property="og:url" content="https://www.fimma.cl"> <!-- Reemplazar con tu dominio final -->
+    <meta property="og:type" content="website">
+
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" href="imagenes/fimma.png" type="image/png">
@@ -12,7 +25,7 @@
     <!-- 1. Añadir CSS de Swiper.js -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Iconos (Feather Icons) -->
-    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://unpkg.com/feather-icons" defer></script>
 </head>
 <body>
     <main>
@@ -28,22 +41,13 @@
                         <span class="nav-pill"><img src="imagenes/fimma.png" alt="Logo Fimma" class="nav-logo"> Fimma</span>
                     </div>
                     <div class="nav-center">
-                        <a href="#hero" class="nav-link-primary">Inicio</a>
                         <a href="#productos" class="nav-link-secondary">Productos</a>
                         <a href="#nosotros" class="nav-link-secondary">Nosotros</a>
                         <a href="#galeria" class="nav-link-secondary">Galería</a>
-                        <div class="nav-dropdown">
-                            <a href="#" class="nav-more-button">Más <i data-feather="chevron-down" class="chevron-icon"></i></a>
-                            <div class="dropdown-menu">
-                                <a href="#productos">Productos</a>
-                                <a href="#nosotros">Nosotros</a>
-                                <a href="#galeria">Galería</a>
-                            </div>
-                        </div>
+                        <a href="#documentacion" class="nav-link-secondary">Documentación</a>
                         <a href="#contacto" class="nav-link-primary">Contacto</a>
                     </div>
                     <div class="nav-right">
-                        <a href="#" class="buy-button">Solicitar Información</a>
                         <!-- Botón de Menú Hamburguesa para móvil -->
                         <button class="hamburger-menu" aria-label="Abrir menú">
                             <i data-feather="menu"></i>
@@ -96,34 +100,34 @@
                 <!-- Producto 1: Kit de Autoinstalación -->
                 <div class="product-card">
                     <div class="product-image-container">
-                        <img src="imagenes/tobogan2.png" alt="Kit de autoinstalación de tobogán de emergencia">
+                        <img src="imagenes/tobogan2.png" alt="Kit de autoinstalación de tobogán de emergencia" loading="lazy">
                     </div>
                     <div class="product-content">
                         <h3>Kit de Autoinstalación</h3>
                         <p>Todo lo que necesitas para una instalación segura y certificada, con instrucciones claras y soporte a distancia.</p>
-                        <a href="#contacto" class="product-button">Consultar</a>
+                        <a href="#contacto" class="cta-button" data-product="Kit de Autoinstalación">Consultar</a>
                     </div>
                 </div>
                 <!-- Producto 2: Repuestos y Piezas -->
                 <div class="product-card">
                     <div class="product-image-container">
-                        <img src="imagenes/Captura de pantalla 2025-02-13 163839.png" alt="Repuestos y piezas para toboganes">
+                        <img src="imagenes/Captura de pantalla 2025-02-13 163839.png" alt="Repuestos y piezas para toboganes" loading="lazy">
                     </div>
                     <div class="product-content">
                         <h3>Repuestos y Piezas</h3>
                         <p>Garantiza la vida útil de tu tobogán con nuestro stock completo de repuestos y sistema de canoas intercambiables.</p>
-                        <a href="#contacto" class="product-button">Ver Piezas</a>
+                        <a href="#contacto" class="cta-button" data-product="Repuestos y Piezas">Ver Piezas</a>
                     </div>
                 </div>
                 <!-- Producto 3: Set Completo -->
                 <div class="product-card">
                     <div class="product-image-container">
-                        <img src="imagenes/Captura de pantalla 2025-02-13 164032.png" alt="Set completo de tobogán de emergencia instalado">
+                        <img src="imagenes/Captura de pantalla 2025-02-13 164032.png" alt="Set completo de tobogán de emergencia instalado" loading="lazy">
                     </div>
                     <div class="product-content">
                         <h3>Set Completo (Instalado)</h3>
                         <p>Nos encargamos de todo: visita técnica, fabricación a medida, instalación y certificación final del sistema.</p>
-                        <a href="#contacto" class="product-button">Solicitar Visita</a>
+                        <a href="#contacto" class="cta-button" data-product="Set Completo (Instalado)">Solicitar Visita</a>
                     </div>
                 </div>
             </div>
@@ -139,16 +143,29 @@
                     <p>Nuestros pilares son la experiencia, la rapidez y el soporte constante. Respondemos siempre a los llamados y contamos con un sistema que facilita el mantenimiento.</p>
                     <div class="account-buttons">
                         <a href="#contacto" class="cta-button orange">Contactar a Soporte</a>
-                        <a href="#" class="cta-button-ghost">Ver Proyectos</a>
+                        <a href="#galeria" class="cta-button-ghost">Ver Proyectos</a>
                     </div>
                 </div>
-                <div class="account-image-grid">
-                    <!-- Imágenes de características de Fimma -->
-                    <img src="imagenes/Captura de pantalla 2025-02-13 170025.png" alt="Instalación de tobogán Fimma 1" class="img-1">
-                    <img src="imagenes/Captura de pantalla 2025-02-13 164815.png" alt="Instalación de tobogán Fimma 2" class="img-2">
-                    <img src="imagenes/Captura de pantalla 2025-02-13 164708.png" alt="Instalación de tobogán Fimma 3" class="img-3">
-                    <img src="imagenes/Captura de pantalla 2025-02-13 164032.png" alt="Instalación de tobogán Fimma 4" class="img-4">
-                    <img src="imagenes/Captura de pantalla 2025-02-13 163839.png" alt="Instalación de tobogán Fimma 5" class="img-5">
+                <!-- Carrusel de Galería para móvil y escritorio -->
+                <div class="swiper gallery-carousel">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide"><img src="imagenes/Captura de pantalla 2025-02-13 170025.png" alt="Niños usando un tobogán de emergencia Fimma en un jardín infantil" loading="lazy"></div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide"><img src="imagenes/Captura de pantalla 2025-02-13 164815.png" alt="Tobogán de evacuación Fimma instalado en un segundo piso" loading="lazy"></div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide"><img src="imagenes/Captura de pantalla 2025-02-13 164708.png" alt="Detalle de la estructura de un tobogán de emergencia Fimma" loading="lazy"></div>
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide"><img src="imagenes/Captura de pantalla 2025-02-13 164032.png" alt="Vista completa de un tobogán Fimma instalado en una escuela" loading="lazy"></div>
+                        <!-- Slide 5 -->
+                        <div class="swiper-slide"><img src="imagenes/Captura de pantalla 2025-02-13 163839.png" alt="Canoas intercambiables del sistema de toboganes Fimma" loading="lazy"></div>
+                    </div>
+                    <!-- Paginación (puntos) -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- Botones de navegación (flechas) -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
             </div>
         </section>
@@ -173,13 +190,12 @@
                         <h3>Soporte y Mantención</h3>
                         <p>Respondemos siempre a los llamados y contamos con un sistema que facilita el mantenimiento y reemplazo de piezas, asegurando una mayor vida útil.</p>
                     </div>
-                    <div class="feature-item hidden"></div>
                 </div>
                 <div class="feel-card">
                     <i data-feather="box" class="feel-icon"></i>
                     <h2>Kit de Autoinstalación</h2>
                     <p class="feel-card-description">¿Sabías que contamos con un kit de autoinstalación?</p>
-                    <a href="#" class="neumorphic-button">¡Coordina una visita y te ayudamos!</a>
+                    <a href="#contacto" class="neumorphic-button">¡Coordina una visita!</a>
                 </div>
             </div>
         </section>
@@ -191,7 +207,7 @@
                     <span class="pre-title">Normativa y Seguridad</span>
                     <h2>Documentación Técnica Completa</h2>
                     <p>Ponemos a tu disposición todo el material de apoyo y la documentación necesaria para garantizar una correcta instalación y mantenimiento, cumpliendo siempre con las normativas de seguridad vigentes.</p>
-                    <a href="#" class="doc-link">Ver Documentos <i data-feather="arrow-right"></i></a>
+                    <a href="#contacto" class="doc-link">Solicitar Documentos <i data-feather="arrow-right"></i></a>
                 </div>
             </div>
 
@@ -238,14 +254,34 @@
         <!-- ================== Contact Section ================== -->
         <section id="contacto" class="contact-section">
             <h2>Contáctanos</h2>
-            <p class="contact-subtitle">Estamos listos para resolver tus dudas y ayudarte a implementar la mejor solución de seguridad para tu establecimiento.</p>
-            <div class="contact-buttons">
-                <a href="mailto:fima.retail@gmail.com" class="cta-button">
-                    <i data-feather="mail"></i> Enviar Correo
-                </a>
-                <a href="https://wa.me/56984081202" target="_blank" rel="noopener noreferrer" class="cta-button orange">
-                    <i data-feather="message-circle"></i> Hablar por WhatsApp
-                </a>
+            <p class="contact-subtitle">¿Tienes alguna pregunta o quieres una cotización? Rellena el formulario o contáctanos por WhatsApp.</p>
+            <div class="contact-layout">
+                <form id="contact-form" action="https://formspree.io/f/xpwkwwnn" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" rows="8" required>Hola, quisiera cotizar lo siguiente:
+
+- Producto de interés: [Ej: Kit de Autoinstalación, Set Completo, etc.]
+- Nombre del establecimiento: 
+- Ubicación (Comuna/Ciudad): 
+- Teléfono: 
+
+Gracias, quedo atento/a.</textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Enviar Mensaje</button>
+                </form>
+                <div class="contact-alternative">
+                    <p>O si lo prefieres, háblanos directamente:</p>
+                    <a href="https://wa.me/56984081202?text=Hola%2C%20equipo%20de%20FIMMA.%20Me%20gustar%C3%ADa%20solicitar%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20toboganes%20de%20emergencia." target="_blank" rel="noopener noreferrer" class="cta-button orange"><i data-feather="message-circle"></i> Hablar por WhatsApp</a>
+                </div>
             </div>
         </section>
 
@@ -282,15 +318,19 @@
     <div class="mobile-nav-overlay"></div>
     <nav class="mobile-nav">
         <button class="close-menu" aria-label="Cerrar menú">&times;</button>
-        <a href="#hero" class="mobile-nav-link">Inicio</a>
         <a href="#productos" class="mobile-nav-link">Productos</a>
         <a href="#nosotros" class="mobile-nav-link">Nosotros</a>
         <a href="#galeria" class="mobile-nav-link">Galería</a>
         <a href="#documentacion" class="mobile-nav-link">Documentación</a>
         <a href="#contacto" class="mobile-nav-link">Contacto</a>
         <a href="#redes" class="mobile-nav-link">Redes</a>
-        <a href="#contacto" class="buy-button mobile-buy-button">Solicitar Información</a>
+        <a href="https://wa.me/56984081202?text=Hola%2C%20equipo%20de%20FIMMA.%20Me%20gustar%C3%ADa%20solicitar%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20toboganes%20de%20emergencia." target="_blank" rel="noopener noreferrer" class="buy-button mobile-buy-button">Solicitar Información</a>
     </nav>
+
+    <!-- Botón de Acción Flotante (FAB) -->
+    <a href="https://wa.me/56984081202?text=Hola%2C%20equipo%20de%20FIMMA.%20Me%20gustar%C3%ADa%20solicitar%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20toboganes%20de%20emergencia." target="_blank" rel="noopener noreferrer" class="floating-cta-button" aria-label="Solicitar Información por WhatsApp">
+        <i data-feather="message-circle"></i>
+    </a>
 
     <!-- 3. Añadir JS de Swiper.js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

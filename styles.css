@@ -121,8 +121,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  max-width: 800px;
+  width: 95%;
+  max-width: 900px;
   transition: all 0.3s ease-in-out; /* Transición suave para todos los cambios */
 }
 
@@ -222,19 +222,6 @@ body {
   font-weight: 700;
   transition: background-color 0.3s;
   white-space: nowrap; /* Evita que el texto del botón se parta */
-}
-
-/* Botón de menú hamburguesa (inicialmente oculto) */
-.hamburger-menu {
-  display: none; /* Oculto en escritorio */
-  background: #f0f2f5; /* Mismo fondo que la píldora del logo */
-  border: none;
-  color: var(--primary-color);
-  cursor: pointer;
-  padding: 0.5rem; /* Espaciado interno */
-  border-radius: 0.75rem; /* Bordes redondeados */
-  line-height: 0; /* Para centrar el icono verticalmente */
-  transition: background-color 0.3s;
 }
 
 .nav-right .buy-button:hover {
@@ -421,6 +408,12 @@ section h2 {
   flex-grow: 1;
 }
 
+.product-content .cta-button {
+  padding: 0.8rem 1.5rem;
+  text-align: center;
+  margin-top: auto; /* Empuja el botón al final de la tarjeta */
+}
+
 /* ================== Account Pages Section ================== */
 .account-section {
   background-color: #1a1f33;
@@ -493,23 +486,25 @@ section h2 {
   height: 450px;
 }
 
-.account-image-grid img {
-  position: absolute;
+/* Estilos para el carrusel de Swiper en la galería */
+.gallery-carousel {
+  width: 100%;
+  height: 400px; /* Altura del carrusel */
+}
+
+.gallery-carousel .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-carousel .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 1rem;
-  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 20%), 0 10px 10px -5px rgb(0 0 0 / 10%);
-  transition: transform 0.3s ease-out;
 }
-
-.account-image-grid img:hover {
-  transform: translateY(-10px);
-  z-index: 10;
-}
-
-.account-image-grid .img-1 { top: 0; left: 10%; width: 45%; }
-.account-image-grid .img-2 { top: 20%; left: 50%; width: 45%; }
-.account-image-grid .img-3 { top: 50%; left: 0; width: 35%; }
-.account-image-grid .img-4 { top: 60%; left: 30%; width: 30%; }
-.account-image-grid .img-5 { top: 55%; left: 65%; width: 35%; }
 
 /* ================== Features Section ================== */
 .features-section {
@@ -768,11 +763,58 @@ section h2 {
   font-size: 1.1rem;
 }
 
-.contact-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+.contact-layout {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: var(--card-shadow);
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #d2d6da;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(52, 71, 103, 0.1);
+}
+
+.contact-form button[type="submit"] {
+  width: 100%;
+  cursor: pointer;
+}
+
+.contact-alternative {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.contact-alternative p {
+  margin-bottom: 1rem;
 }
 
 .contact-buttons .cta-button {
@@ -850,11 +892,110 @@ section h2 {
   font-weight: 700;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  transition: color 0.3s;
+  color: var(--text-color);
+}
+/* ================== Menú Móvil (Off-canvas) ================== */
+
+/* Botón de Acción Flotante (FAB) */
+.floating-cta-button {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 60px;
+  height: 60px;
+  background-image: linear-gradient(310deg, #21d4fd, #2152ff); /* Gradiente azul para WhatsApp */
+  color: var(--white);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 998;
+  transition: transform 0.3s;
+}
+
+.floating-cta-button:hover {
+  transform: scale(1.1);
+}
+
+.floating-cta-button i {
+  width: 28px;
+  height: 28px;
+}
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Inicialmente fuera de la pantalla */
+  width: 280px;
+  height: 100%;
+  background-color: var(--white);
+  box-shadow: -4px 0 15px rgba(0,0,0,0.1);
+  z-index: 1002;
+  transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  padding: 4rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mobile-nav.open {
+  right: 0;
+}
+
+.mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s, visibility 0.4s;
+}
+
+.mobile-nav-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.close-menu {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.mobile-nav-link {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.mobile-buy-button {
+  margin-top: auto; /* Empuja el botón al final */
+  text-align: center;
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 0.8rem 1rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.feature-item {
+  transition: transform 0.3s ease-out;
+}
+.feature-item:hover {
+  transform: translateY(-5px);
 }
 /* ================== Responsive Design ================== */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hero h1 {
     font-size: 2.5rem;
   }
@@ -862,7 +1003,7 @@ section h2 {
   section {
     padding: 3rem 1rem;
   }
- 
+
   /* Oculta la navegación central en móvil */
   .nav-center {
     display: none;
@@ -872,27 +1013,34 @@ section h2 {
   .hamburger-menu {
     display: block;
   }
- 
-  /* Oculta el menú desplegable "Más" que ya no se usa */
-  .nav-dropdown {
-    display: none;
-  }
- 
-  .dropdown-menu.show {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    min-width: 150px;
-  }
 
   .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem; /* Espacio entre el botón de info y la hamburguesa */
+    /* Asegura que el contenedor del botón de hamburguesa no ocupe espacio extra */
+    flex: none;
   }
- 
+
   .nav-right .buy-button {
-    padding: 0.6rem 0.8rem; /* Un poco más pequeño en móvil */
-    font-size: 0.9rem;
+    display: none; /* Oculta el botón original en la vista móvil */
+  }
+}
+
+@media (max-width: 992px) { /* Este se mantiene para el contenido de las secciones */
+  /* Ajustes para la sección "Sobre Nosotros" en tablets y móviles */
+  .features-grid {
+    grid-template-columns: 1fr; /* Apila los elementos */
+  }
+
+  /* Ajustes para la sección de galería en tablets y móviles */
+  .account-grid {
+    grid-template-columns: 1fr; /* Apila los elementos */
+    gap: 3rem;
+  }
+
+  .account-text-content {
+    text-align: center; /* Centra el texto cuando está apilado */
+  }
+
+  .account-text-content h2 {
+    text-align: center;
   }
 }
