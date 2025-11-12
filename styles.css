@@ -224,6 +224,19 @@ body {
   white-space: nowrap; /* Evita que el texto del botón se parta */
 }
 
+/* Botón de menú hamburguesa (inicialmente oculto) */
+.hamburger-menu {
+  display: none; /* Oculto en escritorio */
+  background: #f0f2f5; /* Mismo fondo que la píldora del logo */
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 0.5rem; /* Espaciado interno */
+  border-radius: 0.75rem; /* Bordes redondeados */
+  line-height: 0; /* Para centrar el icono verticalmente */
+  transition: background-color 0.3s;
+}
+
 .nav-right .buy-button:hover {
   background: #2c3e50;
 }
@@ -414,13 +427,24 @@ section h2 {
   color: var(--white);
 }
 
+/* Estilo específico para el H2 de la sección de galería */
+.account-section > h2 {
+  color: #fb8c00; /* Color naranja de "Nuestra Garantía" */
+  margin-bottom: 4rem; /* Aumentar espacio inferior para mejor separación */
+}
+
 .account-grid {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto; /* Centra el grid en la página */
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   align-items: center;
   gap: 4rem;
+}
+
+.account-text-content {
+  /* Alinea todo el texto de este bloque a la izquierda */
+  text-align: left;
 }
 
 .account-text-content .pre-title {
@@ -433,6 +457,7 @@ section h2 {
 .account-text-content h2 {
   color: var(--white);
   font-size: 2.5rem;
+  text-align: left; /* Asegura que el título esté alineado a la izquierda */
 }
 
 .account-text-content p {
@@ -756,20 +781,6 @@ section h2 {
   gap: 0.8rem;
 }
 
-/* Estilos para los botones de Instagram en la sección social */
-.social-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 2rem;
-  flex-wrap: wrap;
-}
-
-.social-insta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.8rem;
-}
 /* ================== Social Media Section ================== */
 .social-section {
   text-align: center;
@@ -842,25 +853,31 @@ section h2 {
   gap: 0.5rem;
   transition: color 0.3s;
 }
-
 /* ================== Responsive Design ================== */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.5rem;
   }
-
+ 
   section {
     padding: 3rem 1rem;
   }
-
-  /* Oculta los enlaces secundarios y muestra el menú "Más" */
-  .nav-link-secondary {
+ 
+  /* Oculta la navegación central en móvil */
+  .nav-center {
     display: none;
   }
-  .nav-dropdown {
+ 
+  /* Muestra el botón de hamburguesa */
+  .hamburger-menu {
     display: block;
   }
-
+ 
+  /* Oculta el menú desplegable "Más" que ya no se usa */
+  .nav-dropdown {
+    display: none;
+  }
+ 
   .dropdown-menu.show {
     display: flex;
     flex-direction: column;
@@ -868,15 +885,14 @@ section h2 {
     min-width: 150px;
   }
 
-  .dropdown-menu a {
-    padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
-    transition: background-color 0.2s;
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Espacio entre el botón de info y la hamburguesa */
   }
-
-  .dropdown-menu a:hover {
-    background-color: var(--background-color);
+ 
+  .nav-right .buy-button {
+    padding: 0.6rem 0.8rem; /* Un poco más pequeño en móvil */
+    font-size: 0.9rem;
   }
-
-  .nav-center { gap: 1.5rem; }
 }

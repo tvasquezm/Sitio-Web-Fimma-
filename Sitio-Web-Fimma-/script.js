@@ -1,26 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Animación de aparición al hacer scroll
     feather.replace(); // Inicializa los iconos de Feather
 
-    // --- Lógica de animación de aparición con IntersectionObserver (más eficiente) ---
     const revealElements = document.querySelectorAll('section:not(.hero)');
-
-    const revealObserverOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.15 // Se activa cuando el 15% del elemento es visible
-    };
-
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                // Opcional: deja de observar el elemento una vez que es visible para ahorrar recursos
-                observer.unobserve(entry.target);
-            }
-        });
-    }, revealObserverOptions);
-
-    revealElements.forEach(el => revealObserver.observe(el));
 
     // --- Lógica para el seguimiento de scroll (Scroll-Spy) ---
     const sections = document.querySelectorAll('section[id]');
@@ -97,8 +79,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Lógica para el scroll (solo para la barra de navegación) ---
-    const handleScroll = () => {
+    // --- Lógica combinada para el scroll ---
+    const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        // Animación de aparición
+        revealElements.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 100) {
+                el.classList.add('visible');
+            }
+        });
+
         // Barra de navegación pegajosa (Sticky Nav)
         if (window.pageYOffset > stickyPoint) {
             nav.classList.add('sticky');
@@ -107,7 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', revealOnScroll);
+    // Ejecutar una vez al cargar la página para los elementos ya visibles
+    revealOnScroll();
 
     // --- Lógica para la carga diferida del video de YouTube ---
     const videoContainer = document.querySelector('.video-container');
@@ -127,26 +120,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Lógica para el menú de hamburguesa en móvil ---
-    const hamburgerBtn = document.querySelector('.hamburger-menu');
-    const mobileNav = document.querySelector('.mobile-nav');
-    const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
-    const closeBtn = document.querySelector('.close-menu');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    // --- Lógica para el menú desplegable "Más" en móvil ---
+    const dropdown = document.querySelector('.nav-dropdown');
+    const moreButton = document.querySelector('.nav-more-button');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
 
-    const openMobileMenu = () => {
-        mobileNav.classList.add('open');
-        mobileNavOverlay.classList.add('open');
-    };
-
-    const closeMobileMenu = () => {
-        mobileNav.classList.remove('open');
-        mobileNavOverlay.classList.remove('open');
+    if (moreButton) {
+        moreButton.addEventListener('click', (e) => {
+            e.preventDefault(); // Evita que el enlace '#' navegue
+            e.stopPropagation(); // Detiene la propagación del clic
+            dropdown.classList.toggle('open');
+            dropdownMenu.classList.toggle('show');
+        });
     }
 
-    hamburgerBtn.addEventListener('click', openMobileMenu);
-    closeBtn.addEventListener('click', closeMobileMenu);
-    mobileNavOverlay.addEventListener('click', closeMobileMenu);
-    // Cierra el menú al hacer clic en un enlace
-    mobileNavLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+    // Cierra el menú si se hace clic fuera de él
+    window.addEventListener('click', (e) => {
+        if (dropdown && dropdown.classList.contains('open')) {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('open');
+                dropdownMenu.classList.remove('show');
+            }
+        }
+    });
 });

@@ -44,6 +44,10 @@
                     </div>
                     <div class="nav-right">
                         <a href="#" class="buy-button">Solicitar Información</a>
+                        <!-- Botón de Menú Hamburguesa para móvil -->
+                        <button class="hamburger-menu" aria-label="Abrir menú">
+                            <i data-feather="menu"></i>
+                        </button>
                     </div>
                 </nav>
             </div>
@@ -249,11 +253,11 @@
         <section id="redes" class="social-section">
             <h2>Síguenos en nuestras redes sociales</h2>
             <p class="social-subtitle">Mantente al día con nuestros últimos proyectos, noticias y consejos de seguridad.</p>
-            <div class="social-buttons">
-                <a href="https://www.instagram.com/fimma.cl/#" target="_blank" rel="noopener noreferrer" class="cta-button social-insta-button">
+            <div class="contact-buttons">
+                <a href="https://www.instagram.com/fimma.cl/#" target="_blank" rel="noopener noreferrer" class="cta-button">
                     <i data-feather="instagram"></i> Instagram Fimma
                 </a>
-                <a href="https://www.instagram.com/nelson_vasquez_fima/#" target="_blank" rel="noopener noreferrer" class="cta-button social-insta-button">
+                <a href="https://www.instagram.com/nelson_vasquez_fima/#" target="_blank" rel="noopener noreferrer" class="cta-button">
                     <i data-feather="instagram"></i> Instagram Nelson Vásquez
                 </a>
             </div>
@@ -273,6 +277,20 @@
             </div>
         </div>
     </footer>
+
+    <!-- Menú Lateral para Móvil (Off-canvas) -->
+    <div class="mobile-nav-overlay"></div>
+    <nav class="mobile-nav">
+        <button class="close-menu" aria-label="Cerrar menú">&times;</button>
+        <a href="#hero" class="mobile-nav-link">Inicio</a>
+        <a href="#productos" class="mobile-nav-link">Productos</a>
+        <a href="#nosotros" class="mobile-nav-link">Nosotros</a>
+        <a href="#galeria" class="mobile-nav-link">Galería</a>
+        <a href="#documentacion" class="mobile-nav-link">Documentación</a>
+        <a href="#contacto" class="mobile-nav-link">Contacto</a>
+        <a href="#redes" class="mobile-nav-link">Redes</a>
+        <a href="#contacto" class="buy-button mobile-buy-button">Solicitar Información</a>
+    </nav>
 
     <!-- 3. Añadir JS de Swiper.js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
